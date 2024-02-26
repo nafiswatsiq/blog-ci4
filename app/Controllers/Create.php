@@ -36,7 +36,7 @@ class Create extends BaseController
         $image = $this->request->getFile('image');
 
         $imageName = $image->getRandomName();
-        $image->move(WRITEPATH . 'uploads', $imageName);
+        $image->move('uploads', $imageName);
 
         $post['image'] = $imageName;
         $post['slug'] = url_title($post['title'], '-', true); 
